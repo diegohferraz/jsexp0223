@@ -1,5 +1,3 @@
-import { knownGestures, gesturesStrings } from "../util/gestures.js"
-
 export default class HandGesturesService {
   #gestureEstimator
   #fingerpose
@@ -7,7 +5,8 @@ export default class HandGesturesService {
   #handsVersion
   #detector = null
 
-  constructor({ fingerpose, handPoseDetection, handsVersion }) {
+
+  constructor({ fingerpose, handPoseDetection, handsVersion, knownGestures }) {
     this.#gestureEstimator = new fingerpose.GestureEstimator(knownGestures)
     this.#fingerpose = fingerpose
     this.#handPoseDetection = handPoseDetection
